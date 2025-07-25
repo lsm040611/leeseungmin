@@ -1,4 +1,4 @@
-# 2025.07.14 ~ 2025.07.20 우분투 터틀심 공부, 무조코 설치, python3 setting_state.py가 실행되지 않는 에러를 겪어 여러번 해결 시도, 해결 못함
+#우분투 터틀심 공부, 무조코 설치, python3 setting_state.py가 실행되지 않는 에러를 겪어 여러번 해결 시도, 해결 못함
   340  ls
   341  tar -tf tararchive.tar
   342  tar -xvf tararchive.tar 
@@ -482,3 +482,89 @@
   820  sudo apt install libglfw3
   821  cd ..
   822  history
+  # 무조코 실행하기 위해 torch torchaudio 깔던 중 용량 부족 발생 -> 외장하드로 해결
+  823  clear
+  824  mkdir ros2_self_study
+  825  cd ros2_self_study/
+  826  git init
+  827  /home/leeseungmin//ros2_self_study/.git/
+  828  git init
+  829  git add ros2_self_study.html
+  830  ros2_self_study.html~
+  831  git add ros2_self_study.html
+  832  git commit -m "new file"
+  833  git status
+  834  git remote add origin https://github.com/lsm040611/leeseungmin
+  835  git push origin master
+  836  conda init
+  837  source ~/.bashrc
+  838  conda activate safe
+  839  pip install gym-quadruped
+  840  pythhon -m pip install -r requirements.txt
+  841  python -m pip install -r requirements.txt
+  842  conda activate torch_env
+  843  /home/leeseungmin/anaconda3/envs/torch_env/bin/python "/home/leeseungmin/import torch.py"
+  844  sudo apt update
+  845  sudo apt install python3 python3-pip python3 venv -y
+  846  conda init
+  847  source ~/.bashrc
+  848  conda activate safe
+  849  conda create =n torch_env python=3.10 -y
+  850  conda create -n torch_env python=3.10 -y
+  851  conda activate torch_env
+  852  nvidia-smi
+  853  nvcc --version
+  854  lspci \ grep -i nvidia
+  855  lspci | grep -i nvidia
+  856  clear
+  857  condaactivate touch_env
+  858  conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  859  code .
+  860  lspci | grep -i nvidia
+  861  ~
+  862  lspci | grep -i nvidia
+  863  nvidia-smi
+  864  conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  865  conda create -n torch_gpu python=3.10 -y
+  866  conda activate torch_gpu
+  867  conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  868  code .
+  869  lspci | grep -i nvidia
+  870  pip3 show torch
+  871  sudo apt update
+  872  clear
+  873  history
+  874  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+  875  wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
+  876  sudo dpkg -i cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
+  877  sudo cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-D95DBBE2-keyring.gpg /usr/share/keytrings/
+  878  sudo dpkg -i cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
+  879  wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
+  880  sudo dpkg -i cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
+  881  sudo cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
+  882  sudo apt update
+  883  sudo apt install cuba
+  884  sudo apt install cuda
+  885  echo 'export PATH=/usr/local/cuda-11.8/bin:$PATH' >> ~/.bashrc
+  886  echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+  887  source ~/.bashrc
+  888  nvcc --version
+  889  which nvcc
+  890  code .
+  891  clear
+  892  sudo apt update
+  893  code .
+  894  nvcc --version
+  895  pip3 show torch
+  896  pip show torch
+  897  pip3 show torch
+  898  conda --version
+  899  cat ~/.bashrc | grep conda
+  900  pip3 show tordch
+  901  pip3 install torch
+  902  df -h
+  903  rm -rf ~/.cache/*
+  904  rm -rf /tmp/*
+  905  df -h
+  906  history
+
