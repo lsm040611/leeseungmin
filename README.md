@@ -1,4 +1,4 @@
-#우분투 터틀심 공부, 무조코 설치, python3 setting_state.py가 실행되지 않는 에러를 겪어 여러번 해결 시도, 해결 못함
+#우분투 터틀심 공부, 무조코 설치, python3 setting_state.py가 실행되지 않는 에러를 겪어 여러번 해결 시도
   340  ls
   341  tar -tf tararchive.tar
   342  tar -xvf tararchive.tar 
