@@ -567,4 +567,450 @@
   904  rm -rf /tmp/*
   905  df -h
   906  history
+  #외장하드에 conda, ros2, mujoco, torch, cuda 설치, 실행경로 외장하드로 변경, ant-v5 기본 예제 돌려본 후 강화학습 예제 돌려봄
+ 1439  conda activate pytorch_env
+ 1440  conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+ 1441  conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+ 1442  conda create -n pytorch_env python=3.8 -y
+ 1443  conda activate pytorch_env
+ 1444  conda install pytorch torchvision torchaudio cpuonly -c pytorch -y
+ 1445  python -c "import torch; print(torch.__version__); print(torch.cuda.is_available())"
+ 1446  python
+ 1447  nvcc --version
+ 1448  sudo apt update
+ 1449  sudo apt install nvidia-driver-525
+ 1450  sudo reboot
+ 1451  nvcc --version
+ 1452  # 예시 디렉토리: /media/username/external/cuda
+ 1453  mkdir -p /media/username/external/cuda
+ 1454  mkdir -p /media/leeseungmin/mydisk/cuda
+ 1455  sudo mkdir -p /media/leeseungmin/mydisk/cuda
+ 1456  wget https://developer.download.nvidia.com/compute/cuda/12.4.1/local_installers/cuda_12.4.1_550.54.15_linux.run
+ 1457  chmod +x cuda_12.4.1_550.54.15_linux.run
+ 1458  sudo ./cuda_12.4.1_550.54.15_linux.run --toolkitpath=/media/leeseungmin/mydisk/cuda --silent --override
+ 1459  sudo ./cuda_12.4.1_550.54.15_linux.run --toolkitpath=/media/username/external/cuda --silent --override
+ 1460  sudo ./cuda_12.4.1_550.54.15_linux.run --toolkitpath=/media/leeseungmin/mydisk/cuda --silent --override
+ 1461  sudo ./cuda_12.4.1_550.54.15_linux.run   --toolkit   --toolkitpath=/media/leeseungmin/mydisk/cuda   --silent   --override
+ 1462  sudo nano ~/.bashrc
+ 1463  source ~/.bashrc
+ 1464  nvcc --version
+ 1465  /media/leeseungmin/mydisk/cuda/bin/nvcc --version
+ 1466  echo 'export PATH=/media/leeseungmin/mydisk/cuda/bin:$PATH' >> ~/.bashrc~
+ 1467  echo 'export PATH=/media/leeseungmin/mydisk/cuda/bin:$PATH' >> ~/.bashrc
+ 1468  echo 'export LD_LIBRARY_PATH=/media/leeseungmin/mydisk/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1469  source ~/.bashrc
+ 1470  nvcc --version
+ 1471  wget https://github.com/deepmind/mujoco/releases/download/3.1.4/mujoco-3.1.4-linux-x86_64.tar.gz
+ 1472  sudo mkdir -p /media/leeseungmin/mydisk/mujoco
+ 1473  mkdir -p /media/leeseungmin/mydisk/mujoco
+ 1474  tar -xvzf mujoco-3.1.4-linux-x86_64.tar.gz -C /media/leeseungmin/mydisk/mujoco
+ 1475  sudo mkdir -p /media/leeseungmin/mydisk/mujoco
+ 1476  tar -xvzf mujoco-3.1.4-linux-x86_64.tar.gz -C /media/leeseungmin/mydisk/mujoco
+ 1477  sudo tar -xvzf mujoco-3.1.4-linux-x86_64.tar.gz -C /media/leeseungmin/mydisk/mujoco
+ 1478  export MUJOCO_HOME=/media/leeseungmin/mydisk/mujoco/mujoco-3.1.4
+ 1479  export LD_LIBRARY_PATH=$MUJOCO_HOME/bin:$LD_LIBRARY_PATH
+ 1480  export PATH=$MUJOCO_HOME/bin:$PATH
+ 1481  source ~/.bashrc
+ 1482  echo $MUJOCO_HOME
+ 1483  ls $MUJOCO_HOME
+ 1484  pip install mujoco
+ 1485  python
+ 1486  python3
+ 1487  git clone https://github.com/deepmind/mujoco
+ 1488  history
+ 1489  pip install mujoco
+ 1490  cd mujoco
+ 1491  nano ant_sim.py
+ 1492  python3 ant_sim.py
+ 1493  mkdir -p /media/leeseungmin/mydisk/mujoco_models
+ 1494  sudo mkdir -p /media/leeseungmin/mydisk/mujoco_models
+ 1495  cd /media/leeseungmin/mydisk/mujoco_models
+ 1496  wget https://raw.githubusercontent.com/openai/mujoco-py/master/mujoco_py/xmls/ant.xml
+ 1497  ls /media/leeseungmin/mydisk/mujoco_models
+ 1498  wget https://raw.githubusercontent.com/deepmind/mujoco/main/model/ant.xml
+ 1499  pip install gymnasium[mujoco]
+ 1500  python3
+ 1501  nvidia-smi
+ 1502  lspci | grep -i nvidia
+ 1503  sudo apt remove --purge '^nvidia-.*'
+ 1504  sudo ubuntu-drivers autoinstall
+ 1505  sudo reboot
+ 1506  nvidia-smi
+ 1507  sudo ubuntu-drivers devices
+ 1508  python3
+ 1509  pip install gymnasium[mujoco]
+ 1510  python3
+ 1511  with mujoco.viewer.launch(model, data) as viewer:
+ 1512  ㅔㅛ쇄ㅜ3
+ 1513  python3
+ 1514  mkdir -p /media/leeseungmin/mydisk/mujoco_models
+ 1515  cd /media/leeseungmin/mydisk/mujoco_models
+ 1516  wget https://raw.githubusercontent.com/denisyarats/mujoco_models/main/ant.xml
+ 1517  python3
+ 1518  ls -l /media/leeseungmin/mydisk/mujoco_models/
+ 1519  wget https://raw.githubusercontent.com/denisyarats/mujoco_models/main/ant.xml
+ 1520  nano /media/leeseungmin/mydisk/mujoco_models/ant.xml
+ 1521  sudo nano /media/leeseungmin/mydisk/mujoco_models/ant.xml
+ 1522  python3
+ 1523  pip install mujoco glfw
+ 1524  python3
+ 1525  import mujoco
+ 1526  import mujoco.viewer
+ 1527  import numpy as np
+ 1528  import time
+ 1529  xml_path = "/media/leeseungmin/mydisk/mujoco_models/ant.xml"
+ 1530  model = mujoco.MjModel.from_xml_path(xml_path)
+ 1531  data = mujoco.MjData(model)
+ 1532  # 시각화 창 열기
+ 1533  with mujoco.viewer.launch_passive(model, data) as viewer:
+ 1534  import mujoco.viewer
+ 1535  import numpy as np
+ 1536  import time
+ 1537  xml_path = "/media/leeseungmin/mydisk/mujoco_models/ant.xml"
+ 1538  model = mujoco.MjModel.from_xml_path(xml_path)
+ 1539  data = mujoco.MjData(model)
+ 1540  # 시각화 창 열기
+ 1541  with mujoco.viewer.launch_passive(model, data) as viewer:
+ 1542  python3
+ 1543  nono ant_run.py
+ 1544  nano ant_run.py
+ 1545  python3 ant_run.py
+ 1546  nano ant_run.py
+ 1547  python3 ant_run.py
+ 1548  nano ant_run.py
+ 1549  python3 ant_run.py
+ 1550  pip uninstall numpy scipy -y
+ 1551  sudo pip uninstall numpy scipy -y
+ 1552  pip install numpy==1.24.3 scipy
+ 1553  pip install --upgrade cython wheel
+ 1554  pip install --force-reinstall mujoco-py
+ 1555  python3 ant_run.py
+ 1556  python3 -m venv ~/mujoco_env
+ 1557  sudo apt update
+ 1558  sudo apt install python3.10-venv
+ 1559  python3 -m venv ~/mujoco_env
+ 1560  source ~/mujoco_env/bin/activate
+ 1561  python3 ant_run.py
+ 1562  export LD_LIBRARY_PATH=/media/leeseungmin/mydisk/mujoco/bin:$LD_LIBRARY_PATH
+ 1563  export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk/mujoco
+ 1564  python3 ant_run.py
+ 1565  deactivate
+ 1566  export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk/mujoco
+ 1567  export LD_LIBRARY_PATH=/media/leeseungmin/mydisk/mujoco/bin:$LD_LIBRARY_PATH
+ 1568  pip list | grep mujoco-py
+ 1569  pip list | grep -E "numpy|scipy"
+ 1570  pip install numpy==1.24.3 scipy
+ 1571  python3 ant_run.py
+ 1572  pip uninstall mujoco-py
+ 1573  nano ant_run.py
+ 1574  python3 ant_run.py
+ 1575  nano ant_run.py
+ 1576  python3 ant_run.py
+ 1577  nano ant_run.py
+ 1578  python3 ant_run.py
+ 1579  find /media/leeseungmin/mydisk -name ant.xml
+ 1580  nano ant_run.py
+ 1581  python3 ant_run.py
+ 1582  nano ant_run.py
+ 1583  python3 ant_run.py
+ 1584  nano ant_run.py
+ 1585  python3 ant_run.py
+ 1586  nano ant_run.py
+ 1587  python3 ant_run.py
+ 1588  nano ant_run.py
+ 1589  python3 ant_run.py
+ 1590  nano ant_run.py
+ 1591  python3 ant_run.py
+ 1592  nano ant_run.py
+ 1593  python3 ant_run.py
+ 1594  pip show mujoco
+ 1595  import mujoco
+ 1596  import mujoco.viewer
+ 1597  import numpy as np
+ 1598  import time
+ 1599  model = mujoco.MjModel.from_xml_path("ant.xml")
+ 1600  data = mujoco.MjData(model)
+ 1601  viewer = mujoco.viewer.launch_passive(model, data)
+ 1602  step = 0
+ 1603  while True:
+ 1604      data.ctrl[:] = 0.5 * np.sin(0.1 * step + np.arange(model.nu))
+ 1605  nano ant_run.py
+ 1606  model = mujoco.MjModel.from_xml_path("/media/leeseungmin/mydisk/mujoco_models/ant.xml")
+ 1607  python3 ant_run.py
+ 1608  export GLFW_PLATFORM=x11
+ 1609  python3 ant_run.py
+ 1610  nano ant_run.py
+ 1611  python3 ant_run.py
+ 1612  nano ant_run.py
+ 1613  python3 ant_run.py
+ 1614  pip install gym
+ 1615  pip install gym[mujoco]
+ 1616  pip install stable-baselines3
+ 1617  rm -rf ~/.cache/pip
+ 1618  pip uninstall mujoco-py tensorflow keras torch --yes
+ 1619  sudo apt clean
+ 1620  sudo apt autoremove -y
+ 1621  mkdir -p /media/leeseungmin/mydisk/python_packages
+ 1622  sudo mkdir -p /media/leeseungmin/mydisk/python_packages
+ 1623  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1624  pip install --user stable-baselines3
+ 1625  rm -rf ~/.cache/pip
+ 1626  pip uninstall mujoco-py tensorflow keras torch --yes
+ 1627  sudo apt clean
+ 1628  sudo apt autoremove -y
+ 1629  export TMPDIR=/media/leeseungmin/mydisk/tmp
+ 1630  mkdir -p $TMPDIR
+ 1631  mkdir -p $TMPDIR~
+ 1632  sudo mkdir -p $TMPDIR
+ 1633  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1634  export PYTHONPATH=$PYTHONUSERBASE/lib/python3.10/site-packages:$PYTHONPATH
+ 1635  export TMPDIR=/media/leeseungmin/mydisk/tmp
+ 1636  pip install --user stable-baselines3
+ 1637  export TMPDIR=/media/leeseungmin/mydisk/tmp
+ 1638  mkdir -p $TMPDIR
+ 1639  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1640  export PYTHONPATH=$PYTHONUSERBASE/lib/python3.10/site-packages:$PYTHONPATH
+ 1641  rm -rf ~/.cache/pip
+ 1642  sudo apt clean
+ 1643  sudo apt autoremove -y
+ 1644  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1645  export PYTHONPATH=$PYTHONUSERBASE/lib/python3.10/site-packages:$PYTHONPATH
+ 1646  export TMPDIR=/media/leeseungmin/mydisk/tmp
+ 1647  source ~/.bashrc
+ 1648  pip install --user stable-baselines3
+ 1649  sudo pip install --user stable-baselines3
+ 1650  rm -rf ~/.cache/pip
+ 1651  pip uninstall mujoco-py tensorflow keras torch --yes
+ 1652  sudo apt autoremove -y
+ 1653  sudo chown -R $USER:$USER /media/leeseungmin/mydisk
+ 1654  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1655  export PYTHONPATH=$PYTHONUSERBASE/lib/python3.10/site-packages:$PYTHONPATH
+ 1656  export TMPDIR=/media/leeseungmin/mydisk/tmp
+ 1657  mkdir -p $TMPDIR
+ 1658  pip install --user stable-baselines3
+ 1659  rm -rf ~/.cache/pip
+ 1660  rm -rf /media/leeseungmin/mydisk/tmp/*
+ 1661  mkdir -p /media/leeseungmin/mydisk/python_packages/lib
+ 1662  export PYTHONUSERBASE=/media/leeseungmin/mydisk/python_packages
+ 1663  pip install --user stable-baselines3
+ 1664  rm -rf ~/.cache/pip
+ 1665  pip install stable-baselines3 --target=/media/leeseungmin/mydisk/python_packages
+ 1666  rm -rf ~/.cache/pip
+ 1667  TMPDIR=/media/leeseungmin/mydisk/tmp pip install stable-baselines3 --target=/media/leeseungmin/mydisk/python_packages
+ 1668  rm -rf ~/.cache/pip
+ 1669  mkdir -p /media/leeseungmin/mydisk/python_packages
+ 1670  mkdir -p /media/leeseungmin/mydisk/cache
+ 1671  TMPDIR=/media/leeseungmin/mydisk/tmp PIP_CACHE_DIR=/media/leeseungmin/mydisk/cache pip install stable-baselines3 --target=/media/leeseungmin/mydisk/python_packages
+ 1672  rm -rf ~/.cache/pip/*
+ 1673  pip uninstall stable-baselines3
+ 1674  sudo pip uninstall stable-baselines3
+ 1675  pip show stable-baselines3
+ 1676  du -sh /media/leeseungmin/mydisk/tmp
+ 1677  du -sh /media/leeseungmin/mydisk/cache
+ 1678  rm -rf /media/leeseungmin/mydisk/python_packages/*
+ 1679  rm -rf /media/leeseungmin/mydisk/tmp/*
+ 1680  rm -rf /media/leeseungmin/mydisk/cache/*
+ 1681  df -h /media/leeseungmin/mydisk
+ 1682  lsblk
+ 1683  TMPDIR=/media/leeseungmin/mydisk1/tmp pip install stable-baselines3   --target=/media/leeseungmin/mydisk1/python_packages   --no-cache-dir   --upgrade
+ 1684  export PYTHONPATH=$PYTHONPATH:/media/leeseungmin/mydisk1/python_packages
+ 1685  source ~/.bashrc
+ 1686  python3
+ 1687  source ~/.bashrc
+ 1688  python3
+ 1689  TMPDIR=/media/leeseungmin/mydisk1/tmp PIP_CACHE_DIR=/media/leeseungmin/mydisk1/cache pip install torch --target=/media/leeseungmin/mydisk1/python_packages
+ 1690  #!/bin/bash
+ 1691  python3 -m pip install --upgrade pip
+ 1692  TARGET_DIR="/media/leeseungmin/mydisk1/python_packages"
+ 1693  pip install --upgrade --target="$TARGET_DIR" stable-baselines3 torch gymnasium
+ 1694  export TMPDIR=/media/leeseungmin/mydisk1/tmp
+ 1695  mkdir -p $TMPDIR
+ 1696  TMPDIR=/media/leeseungmin/mydisk1/tmp pip install nvidia-cudnn-cu12 --target=/media/leeseungmin/mydisk1/python_packages
+ 1697  rm -rf ~/.cache/pip/*
+ 1698  cd /media/leeseungmin/mydisk1/~
+ 1699  cd /media/leeseungmin/mydisk1/
+ 1700  python3 -m venv rl_env
+ 1701  source rl_env/bin/activate
+ 1702  pip install --upgrade pip
+ 1703  pip install stable-baselines3 torch gymnasium~
+ 1704  pip install stable-baselines3 torch gymnasium
+ 1705  history
+ 1706  export PYTHONPATH=/media/leeseungmin/mydisk1/python_packages:$PYTHONPATH
+ 1707  nano ~/.bashrc
+ 1708  conda activate mujoco-rl
+ 1709  which conda
+ 1710  nano ~/.bashrc
+ 1711  source ~/.bashrc
+ 1712  conda activate mujoco-rl
+ 1713  nano ~/.bashrc
+ 1714  source ~/.bashrc
+ 1715  conda activate mujoco-rl
+ 1716  conda activate mujoco
+ 1717  nano ~/.bashrc
+ 1718  grep -r "mydisk/miniconda3" ~
+ 1719  nano ~/.conda/environments.txt
+ 1720  grep -r "mydisk/miniconda3" ~
+ 1721  rm ~/.conda/environments.txt
+ 1722  ls -a ~ | grep profile
+ 1723  grep "mydisk/miniconda3" ~/.bash_profile ~/.profile 2>/dev/null
+ 1724  source ~/.bashrc
+ 1725  conda activate mujoco-rl
+ 1726  which conda
+ 1727  conda init --all
+ 1728  which conda
+ 1729  source ~/.bashrc
+ 1730  which conda
+ 1731  cat ~/.profile
+ 1732  cat ~/.bash_profile
+ 1733  ls -a ~ | grep bash_profile
+ 1734  echo $PATH | tr ':' '\n' | grep mydisk
+ 1735  export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/media/leeseungmin/mydisk/miniconda3' | paste -sd:)
+ 1736  echo $PATH | tr ':' '\n' | grep mydisk
+ 1737  which conda
+ 1738  echo $PATH | tr ':' '\n'
+ 1739  export PATH=/media/leeseungmin/mydisk1/miniconda3/bin:$PATH
+ 1740  which conda
+ 1741  source /media/leeseungmin/mydisk1/miniconda3/etc/profile.d/conda.sh
+ 1742  conda activate mujoco-rl
+ 1743  nano ~/.bashrc
+ 1744  /media/leeseungmin/mydisk1/miniconda3/bin/conda init
+ 1745  /media/leeseungmin/mydisk1/miniconda3/bin/conda init
+ 1746  grep -n "/media/leeseungmin/mydisk/miniconda3" ~/.bashrc
+ 1747  head -1 /media/leeseungmin/mydisk1/miniconda3/bin/conda
+ 1748  sed -i '1s|^#!.*|#!/media/leeseungmin/mydisk1/miniconda3/bin/python|' /media/leeseungmin/mydisk1/miniconda3/bin/conda
+ 1749  head -1 /media/leeseungmin/mydisk1/miniconda3/bin/conda-env
+ 1750  sed -i '1s|^#!.*|#!/media/leeseungmin/mydisk1/miniconda3/bin/python|' /media/leeseungmin/mydisk1/miniconda3/bin/conda-env
+ 1751  sed -i '1s|^#!.*|#!/media/leeseungmin/mydisk1/miniconda3/bin/python|' /media/leeseungmin/mydisk1/miniconda3/bin/activate
+ 1752  /media/leeseungmin/mydisk1/miniconda3/bin/conda init
+ 1753  which conda
+ 1754  conda activate mujoco-rl
+ 1755  conda info --envs
+ 1756  conda activate pytorch_env
+ 1757  pip list | grep mujoco
+ 1758  ls ~/.mujoco/
+ 1759  python -c "import mujoco_py"
+ 1760  mkdir -p /media/leeseungmin/mydisk1/mujoco
+ 1761  tar -xvzf mujoco210-linux-x86_64.tar.gz -C /media/leeseungmin/mydisk1/mujoco
+ 1762  # === MuJoCo 환경 변수 설정 ===
+ 1763  export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210
+ 1764  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/leeseungmin/mydisk1/mujoco/mujoco210/bin
+ 1765  nano ~/.bashrc
+ 1766  export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210
+ 1767  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/leeseungmin/mydisk1/mujoco/mujoco210/bin
+ 1768  source ~/.bashrc
+ 1769  cp ~/.mujoco/mjkey.txt /media/leeseungmin/mydisk1/mujoco/mujoco210/
+ 1770  conda activate pytorch_env
+ 1771  pip install mujoco-py
+ 1772  pip3 install mujoco-py
+ 1773  conda deactivate
+ 1774  conda env remove -n pytorch_env
+ 1775  conda create -n pytorch_env python=3.10
+ 1776  df -h /media/leeseungmin/mydisk
+ 1777  df -h /media/leeseungmin/mydisk1
+ 1778  conda config --set pkgs_dirs /media/leeseungmin/mydisk1/conda_pkgs_cache
+ 1779  export CONDA_PKGS_DIRS=/media/leeseungmin/mydisk1/conda_pkgs_cache
+ 1780  echo 'export CONDA_PKGS_DIRS=/media/leeseungmin/mydisk1/conda_pkgs_cache' >> ~/.bashrc
+ 1781  source ~/.bashrc
+ 1782  rm -rf /media/leeseungmin/mydisk/conda_pkgs_cache/*
+ 1783  conda clean --all
+ 1784  conda create --prefix /media/leeseungmin/mydisk1/conda_envs/mujoco-rl python=3.10
+ 1785  conda activate mujoco-rl
+ 1786  conda info --envs
+ 1787  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1788  pip install mujoco-py
+ 1789  export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210
+ 1790  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/leeseungmin/mydisk1/mujoco/mujoco210/bin
+ 1791  export MUJOCO_PY_MJKEY_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210/mjkey.txt
+ 1792  nano ~/.bashrc
+ 1793  echo 'export MUJOCO_PY_MUJOCO_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210' >> ~/.bashrc
+ 1794  echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/leeseungmin/mydisk1/mujoco/mujoco210/bin' >> ~/.bashrc
+ 1795  echo 'export MUJOCO_PY_MJKEY_PATH=/media/leeseungmin/mydisk1/mujoco/mujoco210/mjkey.txt' >> ~/.bashrc
+ 1796  source ~/.bashrc
+ 1797  dconda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1798  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1799  pip install gymnasium[mujoco]
+ 1800  pip install stable-baselines3
+ 1801  dr -h
+ 1802  TMPDIR=/media/leeseungmin/mydisk1/tmp pip install stable-baselines3
+ 1803  ㅇㄱ -ㅗ
+ 1804  dr -h
+ 1805  df -h
+ 1806  conda config --show
+ 1807  python -c "import mujoco_py; print('MuJoCo Py 설치 완료')"
+ 1808  pip install cython==0.29.33 --force-reinstall
+ 1809  pip uninstall mujoco_py -y
+ 1810  pip install mujoco_py
+ 1811  (/media/leeseungmin/mydisk1/conda_envs/mujoco-rl) leeseungmin@leeseungmin-17Z90N-VP70ML:~$ python -c "import mujoco_py; print('mujoco_py import 성공')"
+ 1812  python -c 'import mujoco_py; print("mujoco_py import 성공!")'
+ 1813  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1814  python -c 'import mujoco_py; print("mujoco_py import 성공!")'
+ 1815  ?
+ 1816  python -c 'import mujoco_py; print("mujoco_py import 성공!")'
+ 1817  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1818  python -c 'import mujoco_py; print("mujoco_py import 성공!")'
+ 1819  mv /media/leeseungmin/mydisk1/conda_envs/mujoco-rl/lib/libstdc++.so.6 /media/leeseungmin/mydisk1/conda_envs/mujoco-rl/lib/libstdc++.so.6.bak
+ 1820  locate libstdc++.so.6
+ 1821  find /usr/lib /lib -name "libstdc++.so.6" 2>/dev/null
+ 1822  export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+ 1823  python -c 'import mujoco_py; print("mujoco_py import 성공!")'
+ 1824  nano ~/.bashrc
+ 1825  source ~/.bashrc
+ 1826  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1827  python -c "import gymnasium; env = gymnasium.make('Ant-v4'); print('환경 생성 완료')"
+ 1828  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1829  nano ant_ppo.py
+ 1830  python ant_ppo.py
+ 1831  sudo find /usr/local/cuda-*/lib64 -name "libcudnn.so*"
+ 1832  ls /media/leeseungmin/mydisk1/cuda/lib64/libcudnn.so*
+ 1833  find /media/leeseungmin/mydisk1 -name "libcudnn.so*"
+ 1834  echo 'export LD_LIBRARY_PATH=/media/leeseungmin/mydisk1/conda_envs/mujoco-rl/lib/python3.10/site-packages/nvidia/cudnn/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1835  source ~/.bashrc
+ 1836  echo 'export LD_LIBRARY_PATH=/media/leeseungmin/mydisk1/conda_envs/mujoco-rl/lib/python3.10/site-packages/nvidia/cudnn/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1837  source ~/.bashrc
+ 1838  echo $LD_LIBRARY_PATH
+ 1839  nano ~/.bashrc
+ 1840  find /media/leeseungmin/mydisk1 -type d -name "cuda"
+ 1841  export LD_LIBRARY_PATH=/media/leeseungmin/mydisk1/conda_envs/mujoco-rl/lib/python3.10/site-packages/nvidia/cudnn/lib:$LD_LIBRARY_PATH
+ 1842  nvcc --version
+ 1843  which nvcc
+ 1844  ls /usr/local/cuda/lib64/
+ 1845  echo 'export PATH=/media/leeseungmin/mydisk1/cuda/bin:$PATH' >> ~/.bashrc
+ 1846  echo 'export LD_LIBRARY_PATH=/media/leeseungmin/mydisk1/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1847  source ~/.bashrc
+ 1848  nano ~/.bashrc
+ 1849  ls /media/leeseungmin/mydisk1/cuda/lib64
+ 1850  nano ~/.bashrc
+ 1851  echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc
+ 1852  echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1853  source ~/.bashrc
+ 1854  nvcc --version
+ 1855  python ant_ppo.py
+ 1856  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1857  python ant_ppo.py
+ 1858  nano ant_ppo.py
+ 1859  python ant_ppo.py
+ 1860  nano ant_ppo.py
+ 1861  nano visualize_ant.py
+ 1862  python visualize_ant.py
+ 1863  nano ant_ppo.py
+ 1864  python
+ 1865  nano ant_ppo.py
+ 1866  python ant_ppo.py
+ 1867  nano ant_ppo.py
+ 1868  python ant_ppo.py
+ 1869  nano ant_ppo.py
+ 1870  nano visualize_ant.py
+ 1871  python ant_ppo.py
+ 1872  pip install --upgrade gymnasium
+ 1873  pip install --upgrade gymnasium[mujoco] 
+ 1874  python ant_ppo.py
+ 1875  nano ant_ppo.py
+ 1876  python ant_ppo.py
+ 1877  nano ant_ppo.py
+ 1878  nano visualize_ant.py
+ 1879  python ant_ppo.py
+ 1880  nano visualize_ant.py
+ 1881  python ant_ppo.py
+ 1882  HISTORY
+ 1883  history
 
