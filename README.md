@@ -1000,7 +1000,7 @@
  1868  python ant_ppo.py
  1869  nano ant_ppo.py
  1870  nano visualize_ant.py
- 1871  python ant_ppo.py
+ 1871  python ant_ppo.pyhttps://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_a1/assets
  1872  pip install --upgrade gymnasium
  1873  pip install --upgrade gymnasium[mujoco] 
  1874  python ant_ppo.py
@@ -1013,4 +1013,253 @@
  1881  python ant_ppo.py
  1882  HISTORY
  1883  history
+#https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_a1/assets 참고하여 unitree_a1 4족보행 예제 공부
+1746  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1747  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1748  cd ~/media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1749  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1750  cd ~/media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1751  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1752  git clone https://github.com/google-deepmind/mujoco_menagerie.git
+ 1753  python -m mujoco.viewer --mjcf mujoco_menagerie/unitree_a1/scene.xml
+ 1754  pip show mujoco
+ 1755  pip install -U mujoco
+ 1756  python -m mujoco.viewer --mjcf mujoco_menagerie/unitree_a1/scene.xml
+ 1757  nano run_unitree_env.py
+ 1758  python run_unitree_env.py
+ 1759  nano run_unitree_env.py
+ 1760  python run_unitree_env.py
+ 1761  pip install mujoco gymnasium numpy glfw
+ 1762  pip install gymnasium[all] mujoco numpy torch stable-baselines3
+ 1763  pip install gymnasium[all] mujoco numpy torch stable-baselines3 --target=/media/leeseungmin/mydisk1/python_packages
+ 1764  rm -rf ~/.cache/pip
+ 1765  pip install --cache-dir=/media/leeseungmin/mydisk1/pip_cache             --build=/media/leeseungmin/mydisk1/pip_build             --target=/media/leeseungmin/mydisk1/python_packages             gymnasium[all] mujoco numpy torch stable-baselines3
+ 1766  pip install --cache-dir=/media/leeseungmin/mydisk1/pip_cache             --build=/media/leeseungmin/mydisk1/pip_build             --target=/media/leeseungmin/mydisk1/python_packages             gymnasium[all] mujoco numpy torch stable-baselines3
+ 1767  nano ~/.bashrc
+ 1768  python -c "import gymnasium; print(gymnasium.__version__)"
+ 1769  python -c "import mujoco; print(mujoco.__version__)"
+ 1770  python -c "import numpy; print(numpy.__version__)"
+ 1771  python -c "import torch; print(torch.__version__)"
+ 1772  python -c "import stable_baselines3; print(stable_baselines3.__version__)"
+ 1773  python -c "import torch; print(torch.__version__)"
+ 1774  nano unitree_a1_env.py
+ 1775  nano train.py
+ 1776  nano test.py
+ 1777  python train.py
+ 1778  nano unitree_a1_env.py
+ 1779  python train.py
+ 1780  nano unitree_a1_env.py
+ 1781  python train.py
+ 1782  python test.py
+ 1783  nano test.py
+ 1784  python test.py
+ 1785  nano unitree_a1_env.py
+ 1786  nano test.py
+ 1787  python test.py
+ 1788  nano test.py
+ 1789  nano train.py
+ 1790  nano unitree_a1_env.py 
+ 1791  python test.py
+ 1792  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1793  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1794  python test.py
+ 1795  sudo apt update
+ 1796  sudo apt install libgl1-mesa-glx libgl1-mesa-dri
+ 1797  python test.py
+ 1798  nano ab.py
+ 1799  python ab.py
+ 1800  nano test.py
+ 1801  nano unitree_a1_env.py 
+ 1802  nano test.py
+ 1803  python test.py
+ 1804  nano test.py
+ 1805  python test.py
+ 1806  nano ab.py
+ 1807  python ab.py
+ 1808  nano ab.py
+ 1809  pip install "gymnasium[classic-control]"
+ 1810  python test.py
+ 1811  nano test.py
+ 1812  pip sho2 mujoco glfw
+ 1813  pip show mujoco glfw
+ 1814  pip uninstall glfw
+ 1815  pip install glfw --target=/media/leeseungmin/mydisk1/python_packages
+ 1816  pip uninstall glfw
+ 1817  conda create -p /media/leeseungmin/mydisk1/conda_envs/mujoco-rl-glfw python=3.10
+ 1818  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl-glfw
+ 1819  pip install glfw
+ 1820  python -c "import gymnasium; print(gymnasium.__version__)"
+ 1821  pip uninstall gym
+ 1822  pip install --upgrade "gymnasium[all]" --target=/media/leeseungmin/mydisk1/python_packages
+ 1823  PIP_CACHE_DIR=/media/leeseungmin/mydisk1/pip_cache pip install --upgrade "gymnasium[all]" --target=/media/leeseungmin/mydisk1/python_packages
+ 1824  sudo apt update
+ 1825  sudo apt clean
+ 1826  sudo rm -rf /var/lib/apt/lists/*
+ 1827  sudo apt update
+ 1828  clear
+ 1829  conda create -p /media/leeseungmin/mydisk1/conda_envs/swig_env python=3.10 -y
+ 1830  conda activate /media/leeseungmin/mydisk1/conda_envs/swig_env
+ 1831  conda install -c conda-forge swig -y
+ 1832  swig -version
+ 1833  pip install box2d-py
+ 1834  nano ~/.bashrc
+ 1835  pip install --upgrade "gymnasium[all]"
+ 1836  pip install pexpect --target=/media/leeseungmin/mydisk1/python_packages
+ 1837  nano ~/.bashrc
+ 1838  source ~/.bashrc
+ 1839  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1840  python test.py
+ 1841  pip list | grep glfw
+ 1842  pip install glfw --target=/media/leeseungmin/mydisk1/python_packages
+ 1843  export PYTHONPATH="/media/leeseungmin/mydisk1/python_packages:$PYTHONPATH"
+ 1844  source ~/.bashrc
+ 1845  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1846  pip list | grep glfw
+ 1847  python test.py
+ 1848  nano test.py
+ 1849  nano ~/.bashrc
+ 1850  python test.py
+ 1851  nano test.py
+ 1852  python test.py
+ 1853  nano test.py
+ 1854  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1855  cd media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1856  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1857  nano test.py
+ 1858  nano unitree_a1_env.py 
+ 1859  nano test.py
+ 1860  nano ~/.bashrc
+ 1861  nano test.py
+ 1862  python test.py
+ 1863  nano test.py
+ 1864  nano unitree_a1_env.py 
+ 1865  python unitree_a1_env.py 
+ 1866  python test.py
+ 1867  nano unitree_a1_env.py 
+ 1868  python unitree_a1_env.py 
+ 1869  python test.py
+ 1870  nano unitree_a1_env.py 
+ 1871  nano test.py
+ 1872  nano train.py
+ 1873  python -c from gymnasium.envs.mujoco.mujoco_renderer import MujocoRenderer
+ 1874  python -c from gymnasium.envs.mujoco.mujoco_renderer import MujocoRenderer
+ 1875  print("MujocoRenderer 사용 가능")
+ 1876  python -c "from gymnasium.envs.mujoco.mujoco_renderer import MujocoRenderer; print('MujocoRenderer 사용 가능')"
+ 1877  pip install 'gymnasium[mujoco]' --force-reinstall
+ 1878  pip install gymnasium mujoco
+ 1879  pip install scipy idna certifi psutil decorator pyyaml beautifulsoup4 snowballstemmer
+ 1880  pip install urllib3
+ 1881  pip install scipy idna certifi psutil decorator pyyaml beautifulsoup4 snowballstemmer
+ 1882  pip list
+ 1883  pip install 'gymnasium[mujoco]'
+ 1884  python train.py
+ 1885  nano unitree_a1_env.py 
+ 1886  nano train.py
+ 1887  nano test.py
+ 1888  python train.py
+ 1889  python test.py
+ 1890  python -m tkinter
+ 1891  pip install pygame
+ 1892  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1893  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1894  python -m tkinter
+ 1895  pip install pygame matplotlib
+ 1896  nano test.py
+ 1897  python test.py
+ 1898  nano unitree_a1_env.py 
+ 1899  nano test.py
+ 1900  python tset.py
+ 1901  python test.py
+ 1902  nano unitree_a1_env.py 
+ 1903  test.py
+ 1904  pip show mujoco
+ 1905  pip show mujoco-py
+ 1906  pip uninstall mujoco-py
+ 1907  python test.py
+ 1908  clear
+ 1909  nano unitree_a1_env.py 
+ 1910  python test.py
+ 1911  nano unitree_a1_env.py 
+ 1912  nano unitree_a1_env.py 
+ 1913  nano train.py
+ 1914  nano test.py
+ 1915  python train.py
+ 1916  python test.py
+ 1917  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1918  nano unitree_a1_env.py 
+ 1919  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1920  nano unitree_a1_env.py 
+ 1921  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1922  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1923  nano unitree_a1_env.py 
+ 1924  python test.py
+ 1925  nano unitree_a1_env.py 
+ 1926  nano train.py
+ 1927  nano test.py
+ 1928  python test.py
+ 1929  python train.py
+ 1930  nano unitree_a1_env.py 
+ 1931  python test.py
+ 1932  nano unitree_a1_env.py 
+ 1933  python test.py
+ 1934  nano unitree_a1_env.py 
+ 1935  python test.py
+ 1936  nano unitree_a1_env.py 
+ 1937  nano train.py
+ 1938  nano test.py
+ 1939  python test.py
+ 1940  nano unitree_a1_env.py 
+ 1941  python train.py
+ 1942  python test.py
+ 1943  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1944  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1945  nano unitree_a1_env.py 
+ 1946  nano train.py
+ 1947  python train.py
+ 1948  python test.py
+ 1949  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1950  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1951  nano unitree_a1_env.py 
+ 1952  python train.py
+ 1953  python test.py
+ 1954  nano unitree_a1_env.py 
+ 1955  python test.py
+ 1956  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1957  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1958  nano unitree_a1_env.py 
+ 1959  nano train.py
+ 1960  nano test.py
+ 1961  nano unitree_a1_env.py 
+ 1962  nano test.py
+ 1963  python test.py
+ 1964  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1965  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1966  python train.py
+ 1967  python test.py
+ 1968  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1969  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1970  nano unitree_a1_env.py 
+ 1971  python train.py
+ 1972  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1973  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1974  nano train.py
+ 1975  python train.py
+ 1976  python test.py
+ 1977  nano scene.xml
+ 1978  nano unitree_a1_env.py 
+ 1979  python test.py
+ 1980  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1981  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1982  python test.py
+ 1983  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1984  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1985  nano train.py
+ 1986  python train.py
+ 1987  python test.py
+ 1988  conda activate /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1989  cd /media/leeseungmin/mydisk1/conda_envs/mujoco-rl
+ 1990  nano unitree_a1_env.py 
+ 1991  nano train.py
+ 1992  python train.py
+ 1993  history
 
